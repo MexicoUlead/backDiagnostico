@@ -4,10 +4,12 @@ const { Schema, model} = require ('mongoose');
 const diagnosticoSchema = Schema({
 
     autoriza:{
-        type: String
+        type: String,
+        required: true
     },
     firma:{
-        type: String
+        type: String,
+        required: true
     },
     nombreEmpresa:{
         type: String
@@ -330,6 +332,12 @@ const diagnosticoSchema = Schema({
     iComentariosAdi:{
         type: String
     },
+    file1:{
+        type: String
+    },
+    file2:{
+        type: String
+    }
 });
 
 

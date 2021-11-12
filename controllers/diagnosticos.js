@@ -3,11 +3,21 @@ const Diagnostico = require ('../models/diagnostico');
 
 const getDiagnosticos = async (req, res) => {
 
-    const diagnosticos = await Diagnostico.find();
+    const desde = Number(req.query.desde) || 0;
+
+    const [diagnosticos, total] = await Promise.all([
+        Diagnostico.find()
+        .skip(desde)
+        .limit(5),
+
+        Diagnostico.countDocuments()
+    ]);
+
 
     res.json({
         ok:true,
-        diagnosticos
+        diagnosticos,
+        total
     });
 
 };

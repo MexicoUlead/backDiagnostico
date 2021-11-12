@@ -15,8 +15,10 @@ app.use(express.json());
 dbConnection();
 //SicVx0OmnGEIJMLl
 
+//rutas
 app.use('/api/diagnosticos', require('./routes/diagnosticos'));
-
+app.use('/api/todo', require('./routes/busquedas'));
+app.use('/api/upload', require('./routes/uploads'));
 
 
 
