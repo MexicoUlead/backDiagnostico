@@ -4,7 +4,7 @@
 const { Router } = require('express');
 const expressfileUpload = require('express-fileupload');
 
-const { fileUpload, retornarFile, fileUploadDrive } = require('../controllers/uploads');
+const { fileUpload, retornarFile } = require('../controllers/uploads');
 
 const router = Router();
 

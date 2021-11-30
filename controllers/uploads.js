@@ -4,7 +4,6 @@ const path = require('path');
 require('dotenv').config();
 const { actualizarFile } = require('../helpers/actualizar-file');
 const { google } = require('googleapis');
-const { mapReduce } = require('../models/diagnostico');
 const fs = require('fs');
 
 //google auth

@@ -14,7 +14,7 @@ if(!diagnostico.file1){
     diagnostico.file1 = nombreArchivo;
     
 }else{
-     diagnostico.file2 = nombreArchivo;
+    diagnostico.file2 = nombreArchivo;
 }
 
     await diagnostico.save();
