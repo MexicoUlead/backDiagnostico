@@ -1,7 +1,6 @@
 const Diagnostico = require('../models/diagnostico');
-const fs = require('fs');
 
-const actualizarFile =  async(id,nombreArchivo) => {
+const actualizarFile =  async(id,nombreArchivo,tipo) => {
 
     const diagnostico = await Diagnostico.findById(id);
 
@@ -10,13 +9,12 @@ const actualizarFile =  async(id,nombreArchivo) => {
         return false;
     }
 
-if(!diagnostico.file1){
+    if(tipo == 'file1'){
     diagnostico.file1 = nombreArchivo;
     
-}else{
+    } if (tipo == 'file2'){
     diagnostico.file2 = nombreArchivo;
-}
-
+    }
     await diagnostico.save();
     return true;
 }

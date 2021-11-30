@@ -26,6 +26,7 @@ const drive = google.drive({
 
 const fileUpload =  async (req, res = response) => {
 
+    const tipo = req.params.tipo;
     const id = req.params.id;
 
     if (!req.files || Object.keys(req.files).length === 0) {
@@ -67,15 +68,7 @@ const response = await drive.files.create({
     }
 });
 
-//mover archivo
-    // if (response.status(400 || 500)) {
-    //     return res.status(500).json({
-    //         err,
-    //         msg:'file no se guarda en la ruta'
-    //     });
-    // }
-    //actualiza o ingresa archivo 
-    //actualizarFile(id, nombreArchivo);
+    actualizarFile(id, tipo, nombreArchivo);
 
     res.json({
         ok:true,

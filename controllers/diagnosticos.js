@@ -35,7 +35,7 @@ await diagnostico.save();
 
 }
 
-const borrarUsuario = async (req, res = response) =>{
+const borrarDiagnostico = async (req, res = response) =>{
 
     const uid = req.params.id;
 
@@ -72,6 +72,6 @@ const borrarUsuario = async (req, res = response) =>{
 module.exports = {
     getDiagnosticos,
     creaDiagnostico,
-    borrarUsuario
+    borrarDiagnostico
     
 }

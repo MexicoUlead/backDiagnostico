@@ -18,7 +18,7 @@ router.use(expressfileUpload({
 
 
 
-router.put('/:id', fileUpload);
+router.put('/:tipo/:id', fileUpload);
 
 
 router.get('/:file', retornarFile);
