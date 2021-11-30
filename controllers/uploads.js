@@ -76,7 +76,7 @@ const response = await drive.files.create({
     //     });
     // }
     //actualiza o ingresa archivo 
-    actualizarFile(id, nombreArchivo);
+    //actualizarFile(id, nombreArchivo);
 
     res.json({
         ok:true,
