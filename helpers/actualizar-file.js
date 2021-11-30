@@ -9,12 +9,12 @@ const actualizarFile =  async(id,nombreArchivo,tipo) => {
         return false;
     }
 
-    if(tipo == 'file1'){
+    //if(tipo === 'file1'){
     diagnostico.file1 = nombreArchivo;
     
-    } if (tipo == 'file2'){
-    diagnostico.file2 = nombreArchivo;
-    }
+    // } if (tipo === 'file2'){
+    // diagnostico.file2 = nombreArchivo;
+    // }
     await diagnostico.save();
     return true;
 }
