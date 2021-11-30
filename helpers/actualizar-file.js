@@ -6,17 +6,17 @@ const actualizarFile =  async(id,nombreArchivo) => {
     const diagnostico = await Diagnostico.findById(id);
 
     if(!diagnostico) {
-        console.log('No es un medico por id');
+        console.log('No es un diagnostico por id');
         return false;
     }
 
-    const pathViejo = `./uploads/${diagnostico.file1}`;
-    if(fs.existsSync(pathViejo)){
-    //borrar el archivo
-    fs.unlinkSync(pathViejo);
-    }
-
+if(!diagnostico.file1){
     diagnostico.file1 = nombreArchivo;
+    
+}else{
+     diagnostico.file2 = nombreArchivo;
+}
+
     await diagnostico.save();
     return true;
 }
