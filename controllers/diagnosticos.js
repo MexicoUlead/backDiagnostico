@@ -8,7 +8,7 @@ const getDiagnosticos = async (req, res) => {
     const [diagnosticos, total] = await Promise.all([
         Diagnostico.find()
         .skip(desde)
-        .limit(5),
+        .limit(35),
 
         Diagnostico.countDocuments()
     ]);
