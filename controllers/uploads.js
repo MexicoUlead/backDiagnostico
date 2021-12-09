@@ -79,13 +79,24 @@ const response = await drive.files.create({
 
 }
 
-const retornarFile = (req , res = response) =>{
-    const file = req.params.file;
-
-    const pathImg = path.join( __dirname, `../uploads/${file}`);
-
-    res.sendFile(pathImg);
-
+async const retornarFile = (req , res = response) =>{
+    try {
+        const file = req.params.file;
+        await drive.permissions.create({
+        fileId:file.id,
+        requestBody:{
+            role: 'reader',
+            type: 'anyone'
+        }
+    })
+    const result = await drive.files.get({
+        fileId:file.id,
+        fields:'webViewLink, webContentLink',
+    })
+    res = result.data
+    } catch (error) {
+        console.log(error.message)
+    }
 }
 
 module.exports = {
