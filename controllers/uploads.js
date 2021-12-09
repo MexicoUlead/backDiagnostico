@@ -79,7 +79,7 @@ const response = await drive.files.create({
 
 }
 
-async const retornarFile = (req , res = response) =>{
+const retornarFile = async (req , res = response) =>{
     try {
         const file = req.params.file;
         await drive.permissions.create({
